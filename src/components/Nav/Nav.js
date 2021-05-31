@@ -1,19 +1,20 @@
 import React from 'react'
+import requests from '../../requests'
 import "./Nav.css"
 
-function Nav() {
+function Nav({ setSelectedOption }) {
     return (
         <div className="nav">
-            <h2>Trending</h2>
-            <h2>Top Rated</h2>
-            <h2>Action</h2>
-            <h2>Comedy</h2>
-            <h2>Horror</h2>
-            <h2>Mystery</h2>
-            <h2>Sci-fi</h2>
-            <h2>Western</h2>
-            <h2>Animation</h2>
-            <h2>TV Movie</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchTrending)}>Trending</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchTopRated)} > Top Rated</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchComedyMovies)} > Action</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchComedyMovies)} > Comedy</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchHorrorMovies)} > Horror</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchMystery)} > Mystery</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchSciFi)} > Sci - fi</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchWestern)} > Western</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchAnimation)} > Animation</h2>
+            <h2 onClick={() => setSelectedOption(requests.fetchTV)} > TV Movie</h2>
         </div>
     )
 }
